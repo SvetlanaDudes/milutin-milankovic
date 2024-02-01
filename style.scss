@@ -1,0 +1,105 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Oswald:wght@300&display=swap');
+
+$color-bg: url('galerija/02.jpg');
+
+$color-fg: rgb(255, 248, 248);
+
+
+$border-color: rgb(12, 231, 255);
+
+$regular-text-font: Arial;
+
+$font: 'Oswald', sans-serif, 40px; 
+
+body{
+    background-image: $color-bg;
+    font-family: $font;
+}
+
+
+p, h1, h2,h4,h6, blockquote{
+    color: white;
+}
+a:hover{
+    color: $color-fg;
+}
+
+.footer a:hover{
+    color: $color-fg !important;
+    text-shadow: 3px 2px 5px $border-color, 5px 6px 14px ;
+
+}
+
+nav-link:hover{
+    color: $color-fg;
+}
+
+.navbar a{
+    font-size: 20px;
+    letter-spacing: 2px;
+}
+
+.active{
+    color: $color-fg !important;
+    text-shadow: 5px 4px 6px $border-color, 5px 6px 14px ;
+}
+
+
+.navbar a:hover{
+    color: $color-fg;
+    text-shadow: 5px 4px 6px $border-color, 5px 6px 14px ;
+}
+
+
+.tacno{
+    background-color:  rgb(60, 196, 60) !important;
+}
+
+.netacno{
+    background-color:  rgb(255, 0, 0) !important;
+}
+
+.card{
+    box-shadow:  $border-color 0px 20px 30px -10px;
+}
+ button{
+    background-color: white !important;
+    width: 100%;
+    height: 100%;
+ }
+
+
+
+
+ 
+
+ .third {
+    color: #fff;
+    box-shadow: 0 0 40px 40px #0dcaf0 inset, 0 0 0 0 #0dcaf0;
+    -webkit-transition: all 150ms ease-in-out;
+    transition: all 150ms ease-in-out;
+  }
+  .third:hover {
+    box-shadow: 0 0 10px 0 $border-color inset, 0 0 10px 4px $border-color;
+  }
+
+
+  .animacija {
+    -webkit-transition: all 150ms ease-in-out;
+    transition: all 150ms ease-in-out;
+  }
+  .animacija:hover {
+    box-shadow: 0 0 10px 0 $border-color inset, 0 0 10px 4px $border-color;
+  }
+
+
+
+
+
+
+  
+
+footer{
+    background-color: #212529;
+}

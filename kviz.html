@@ -1,0 +1,316 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+    <link href="style.css" rel="stylesheet">
+    
+    <title>Kviz</title>
+  </head>
+  <body>
+    
+    <!-- Optional JavaScript; choose one of the two! -->
+
+    <!-- Option 1: Bootstrap Bundle with Popper -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
+
+    <!-- Option 2: Separate Popper and Bootstrap JS -->
+    <!--
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.10.2/dist/umd/popper.min.js" integrity="sha384-7+zCNj/IqJ95wo16oMtfsKbZ9ccEh31eOz1HGyDuCQ6wgnyJNSYdrPa03rtR1zdB" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.min.js" integrity="sha384-QJHtvGhmr9XOIpI6YVutG+2QOK9T+ZnN4kzFN1RtK3zEFEIsxhlmWl5/YESvpZ13" crossorigin="anonymous"></script>
+    -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+      <div class="container-fluid">
+        <a class="navbar-brand" href="index.html">Milutin Milanković</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"  style="filter: contrast(0%)"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+            <li class="nav-item">
+              <a class="nav-link " aria-current="page" href="index.html">Početna</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="biografija.html">Biografija</a>
+            </li>
+            
+            <li class="nav-item">
+              <a class="nav-link" href="radovi.html">Radovi i otkrića</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link active" href="kviz.html">Kviz</a>
+            </li><li class="nav-item">
+              <li class="nav-item">
+                <a class="nav-link" href="galerija.html">Galerija</a>
+              </li>
+              <a class="nav-link" href="kontakt.html">Kontakt</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+    <div class="container-fluid p-5">
+    <div class="row p-5" id="Kviz">
+      <div class="mx-auto text-center p-5"><h2 id="Pitanje">Pitanje</h2></div>
+      <div class="container-fluid p-5">
+        <div class="row">
+          <div class="col-sm-10 col-md-10 col-lg-6 mx-auto text-center rounded p-5">
+            <button type="button" class="btn odgovor animacija"><h3 id="Odgovor1">Odgovor1</h3></button>
+          </div>
+          <div class="col-sm-10 col-md-10 col-lg-6 mx-auto text-center rounded p-5">
+            <button type="button" class="btn odgovor animacija"><h3 id="Odgovor2">Odgovor2</h3></button>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-sm-10 col-md-10 col-lg-6 mx-auto text-center rounded p-5">
+            <button type="button" class="btn odgovor animacija"><h3 id="Odgovor3">Odgovor3</h3></button>
+          </div>
+        </div>
+      </div>
+      <div class="progress">
+        <div class="progress-bar-animated progress-bar-striped bg-info" role="progressbar" style="width: 20%;" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100"></div>
+      </div>
+    </div>
+    <div class="col-lg-6 col-sm-10 mx-auto text-center">
+      <h2 id="Rezultat"></h2>
+    </div>
+    <div class="col-lg-6 col-sm-10 mx-auto text-center rounded p-5">
+      <button type="button" class="btn animacija"><h3 id="PonoviKviz">Ponovi kviz</h3></button>
+    </div>
+    </div>
+
+
+    <footer class="footer">
+      <div class="container">
+          <div class="text-center p-4" style="background-color: rgba(0, 0, 0, 0.05); color: white;">
+            © Svetlana Dudeš IS-29/20 (2022)
+            <a href="index.html" style="text-decoration: none; color: gray;"><strong>Sve o Milutinu Milankoviću</strong></a>
+          </div>
+      </div>
+    </footer>
+
+
+      
+          
+          <script src="https://ajax.aspnetcdn.com/ajax/jQuery/jquery-3.3.1.min.js"></script>
+      
+          <script src="bootstrap/js/bootstrap.bundle.min.js"></script>
+      
+      
+      
+      <script>
+          var pitanja = [
+        "1. Ko je bio Milutin Milanković?", 
+        "2. U kom veku je Milutin Milanković živeo?", 
+        "3. Po čemu je poznat Milutin Milanković?", 
+        "4. Na kojoj se novčanici nalazi Milutin Milanković?", 
+        "5. Gde je umro Milutin Milanković?"
+                        ];
+      
+          var odgovori = [
+            ["Bio je srpski matematičar, geofizičar, građevinski inženjer, klimatolog, astronom, osnivač katedre za nebesku mehaniku na Beogradskom univerzitetu i svetski uvažavan naučnik", 
+            "Bio je srpski pronalazač, inženjer elektrotehnike i mašinstva i futurista, najpoznatiji po svom doprinosu u projektovanju modernog sistema napajanja naizmeničnom strujom.", 
+            "Bio je srpski pesnik, dramski pisac, književni kritičar, pozorišni recenzent i srpski vojnik u Prvom svetskom ratu."],
+
+            ["18. vek", 
+            "Druga polovina 19. i prva polovina 20. veka", 
+            "Druga polovina 17. i prva polovina 18. veka"], 
+
+            ["Poznat je po BesedI o strukturi i podeli planina Balkanskog poluostrva na osnovu geološko-tektonske građe.", 
+            "Poznat je po pesmi Plava grobnica, kao svedok umiranja na ostrvu Vid", 
+            "Poznat je po teoriji ledenih doba, koja povezuje varijacije zemljine orbite i dugoročne klimatske promene"],
+
+            ["50 dinara", 
+            "2000 dinara", 
+            "5000 dinara"],
+
+            ["U Beogradu", 
+            "U Beču", 
+            "U Kragujevcu"]
+                            ];
+      
+          var trenutno_pitanje = 1;
+          var pogodjenih = 0;
+      
+          function idi_na_sl_pitanje(trenutno_pitanje){
+            $("#Pitanje").text(pitanja[trenutno_pitanje-1]);
+      
+            $(".progress-bar-animated").css("width", (trenutno_pitanje*20).toString() + "%");
+      
+            if(trenutno_pitanje<=5){
+              for (let index = 0; index < odgovori[trenutno_pitanje-1].length; index++) {
+                if (index == 0) {
+                  $("#Odgovor1").text(odgovori[trenutno_pitanje-1][index]);
+                }
+                else if (index == 1) {
+                  $("#Odgovor2").text(odgovori[trenutno_pitanje-1][index]);
+                }
+                else if (index == 2) {
+                  $("#Odgovor3").text(odgovori[trenutno_pitanje-1][index]);
+                }
+              }
+            }
+          }
+      
+          function sakrij_sve_i_zavrsi_igru(){
+            $("#Kviz").addClass("d-none");
+            $("#Rezultat").text("Tačno pogođenih pitanja: " + pogodjenih.toString());
+            $("#Rezultat").show();
+            $("#PonoviKviz").parent().show();
+          }
+          
+          $(document).ready(function(){
+            $("#Rezultat").hide();
+            $("#PonoviKviz").parent().hide();
+      
+            $("#Pitanje").text(pitanja[0]);
+      
+            for (let index = 0; index < odgovori[0].length; index++) {
+              if (index == 0) {
+                $("#Odgovor1").text(odgovori[0][index]);
+              }
+              else if (index == 1) {
+                $("#Odgovor2").text(odgovori[0][index]);
+              }
+              else if (index == 2) {
+                $("#Odgovor3").text(odgovori[0][index]);
+              }
+            }
+          });
+      
+          $("#PonoviKviz").click(async function(){
+            location.reload(true)
+          });
+      
+          $("#Odgovor1").click(async function(){
+            if(trenutno_pitanje == 1){
+              $("#Odgovor1").parent().addClass("tacno");
+              pogodjenih += 1;
+              await new Promise(r => setTimeout(r, 1000));
+              $("#Odgovor1").parent().removeClass("tacno");
+            }
+            else if(trenutno_pitanje == 2){
+              $("#Odgovor1").parent().addClass("netacno");
+              $("#Odgovor2").parent().addClass("tacno");
+              await new Promise(r => setTimeout(r, 1000));
+              $("#Odgovor1").parent().removeClass("netacno");
+              $("#Odgovor2").parent().removeClass("tacno");
+            }
+            else if(trenutno_pitanje == 3){
+              $("#Odgovor1").parent().addClass("netacno");
+              $("#Odgovor3").parent().addClass("tacno");
+              await new Promise(r => setTimeout(r, 1000));
+              $("#Odgovor1").parent().removeClass("netacno");
+              $("#Odgovor3").parent().removeClass("tacno");
+            }
+            else if(trenutno_pitanje == 4){
+              $("#Odgovor1").parent().addClass("netacno");
+              $("#Odgovor2").parent().addClass("tacno");
+              await new Promise(r => setTimeout(r, 1000));
+              $("#Odgovor1").parent().removeClass("netacno");
+              $("#Odgovor2").parent().removeClass("tacno");
+            }
+            else if(trenutno_pitanje == 5){
+                $("#Odgovor1").parent().addClass("tacno");
+              pogodjenih += 1;
+              await new Promise(r => setTimeout(r, 1000));
+              $("#Odgovor1").parent().removeClass("tacno");
+              sakrij_sve_i_zavrsi_igru();
+            }
+            trenutno_pitanje = trenutno_pitanje + 1;
+            idi_na_sl_pitanje(trenutno_pitanje);
+          });
+      
+          $("#Odgovor2").click(async function(){
+            if(trenutno_pitanje == 1){
+              $("#Odgovor2").parent().addClass("netacno");
+              $("#Odgovor1").parent().addClass("tacno");
+              await new Promise(r => setTimeout(r, 1000));
+              $("#Odgovor2").parent().removeClass("netacno");
+              $("#Odgovor1").parent().removeClass("tacno");
+            }
+            else if(trenutno_pitanje == 2){
+              $("#Odgovor2").parent().addClass("tacno");
+              pogodjenih += 1;
+              await new Promise(r => setTimeout(r, 1000));
+              $("#Odgovor2").parent().removeClass("tacno");
+            }
+            else if(trenutno_pitanje == 3){
+              $("#Odgovor2").parent().addClass("netacno");
+              $("#Odgovor3").parent().addClass("tacno");
+              await new Promise(r => setTimeout(r, 1000));
+              $("#Odgovor2").parent().removeClass("netacno");
+              $("#Odgovor3").parent().removeClass("tacno");
+            }
+            else if(trenutno_pitanje == 4){
+              $("#Odgovor2").parent().addClass("tacno");
+              pogodjenih += 1;
+              await new Promise(r => setTimeout(r, 1000));
+              $("#Odgovor2").parent().removeClass("tacno");
+            }
+            else if(trenutno_pitanje == 5){
+              $("#Odgovor2").parent().addClass("netacno");
+              $("#Odgovor1").parent().addClass("tacno");
+              await new Promise(r => setTimeout(r, 1000));
+              $("#Odgovor2").parent().removeClass("netacno");
+              $("#Odgovor1").parent().removeClass("tacno");
+              sakrij_sve_i_zavrsi_igru();
+            }
+            trenutno_pitanje = trenutno_pitanje + 1;
+            idi_na_sl_pitanje(trenutno_pitanje);
+          });
+          
+          $("#Odgovor3").click(async function(){
+            if(trenutno_pitanje == 1){
+              $("#Odgovor3").parent().addClass("netacno");
+              $("#Odgovor1").parent().addClass("tacno");
+              await new Promise(r => setTimeout(r, 1000));
+              $("#Odgovor3").parent().removeClass("netacno");
+              $("#Odgovor1").parent().removeClass("tacno");
+            }
+            else if(trenutno_pitanje == 2){
+              $("#Odgovor3").parent().addClass("netacno");
+              $("#Odgovor2").parent().addClass("tacno");
+              await new Promise(r => setTimeout(r, 1000));
+              $("#Odgovor3").parent().removeClass("netacno");
+              $("#Odgovor2").parent().removeClass("tacno");
+            }
+            else if(trenutno_pitanje == 3){
+              $("#Odgovor3").parent().addClass("tacno");
+              pogodjenih += 1;
+              await new Promise(r => setTimeout(r, 1000));
+              $("#Odgovor3").parent().removeClass("tacno");
+            }
+            else if(trenutno_pitanje == 4){
+              $("#Odgovor3").parent().addClass("netacno");
+              $("#Odgovor2").parent().addClass("tacno");
+              await new Promise(r => setTimeout(r, 1000));
+              $("#Odgovor3").parent().removeClass("netacno");
+              $("#Odgovor2").parent().removeClass("tacno");
+            }
+            else if(trenutno_pitanje == 5){
+              $("#Odgovor3").parent().addClass("netacno");
+              $("#Odgovor1").parent().addClass("tacno");
+              await new Promise(r => setTimeout(r, 1000));
+              $("#Odgovor3").parent().removeClass("netacno");
+              $("#Odgovor1").parent().removeClass("tacno");
+              sakrij_sve_i_zavrsi_igru();
+            }
+            trenutno_pitanje = trenutno_pitanje + 1;
+            idi_na_sl_pitanje(trenutno_pitanje);
+          });
+          
+        </script>
+      
+        
+
+
+
+
+  </body>
+</html>

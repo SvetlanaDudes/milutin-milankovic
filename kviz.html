@@ -11,7 +11,7 @@
     
     <title>Kviz</title>
     <style>
-      @media(max-width:600px) and (min-width:500px){
+      @media(min-width:500px) and (max-width:600px) {
         #Odgovor1{
           width: 200px;
           height: auto;
@@ -24,22 +24,6 @@
         #Odgovor3{
           
           width: 200px;
-          height: auto;
-        }
-      }
-      @media(max-width:400px){
-        #Odgovor1{
-          width: 120px;
-          height: auto;
-        }
-        #Odgovor2{
-          
-          width: 120px;
-          height: auto;
-        }
-        #Odgovor3{
-          
-          width: 120px;
           height: auto;
         }
       }
@@ -94,7 +78,7 @@
     <div class="container-fluid p-5">
     <div class="row p-5" id="Kviz">
       <div class="mx-auto text-center p-5"><h2 id="Pitanje">Pitanje</h2></div>
-      <div class="container-fluid p-5">
+      <div class="container-fluid p-1">
         <div class="row">
           <div class="col-sm-10 col-md-10 col-lg-6 mx-auto text-center rounded p-2">
             <button type="button" class="btn odgovor animacija"><h3 id="Odgovor1">Odgovor1</h3></button>
